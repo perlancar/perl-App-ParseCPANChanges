@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+
+use 5.010001;
+use strict;
+use warnings;
+
+# VERSION
+
+use Perinci::CmdLine;
+Perinci::CmdLine->new(
+    url => '/App/ParseCPANChanges/parse_cpan_changes',
+)->run;
+
+1;
+# ABSTRACT: Parse CPAN Changes file
+# PODNAME: parse-cpan-changes
