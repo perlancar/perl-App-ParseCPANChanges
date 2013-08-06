@@ -1,5 +1,10 @@
 Revision history for App-ParseCPANChanges
 
+0.02    2013-08-06 (SHARYANTO)
+
+        - No functional changes. Add missing dep [CT].
+
+
 0.01    2013-08-05 (SHARYANTO)
 
         - First version.
