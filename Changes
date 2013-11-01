@@ -1,5 +1,11 @@
 Revision history for App-ParseCPANChanges
 
+0.03    2013-11-01 (SHARYANTO)
+
+        - No functional changes. Mention some other modules and the rationale
+          for the script.
+
+
 0.02    2013-08-06 (SHARYANTO)
 
         - No functional changes. Add missing dep [CT].
