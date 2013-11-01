@@ -43,11 +43,20 @@ sub parse_cpan_changes {
 =head1 DESCRIPTION
 
 This distribution provides a simple command-line wrapper for
-L<CPAN::Changes>.
+L<CPAN::Changes>. See L<parse-cpan-changes> for more details.
 
 
 =head1 SEE ALSO
 
 L<CPAN::Changes>
+
+L<CPAN::Changes::Spec>
+
+An alternative way to manage your Changes using INI master format:
+L<Module::Metadata::Changes>.
+
+Dist::Zilla plugin to check your Changes before build:
+L<Dist::Zilla::Plugin::CheckChangesHasContent>,
+L<Dist::Zilla::Plugin::CheckChangeLog>.
 
 =cut

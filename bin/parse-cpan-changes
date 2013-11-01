@@ -14,3 +14,20 @@ Perinci::CmdLine->new(
 1;
 # ABSTRACT: Parse CPAN Changes file
 # PODNAME: parse-cpan-changes
+
+=head1 SYNOPSIS
+
+In your top-level dist directory:
+
+ % parse-cpan-changes
+
+
+=head1 DESCRIPTION
+
+This script will parse your C<Changes> file using L<CPAN::Changes> and display
+the result. You can choose the output format using C<--format yaml> or
+C<--format json>.
+
+I use it primarily to check the syntax of my C<Changes> file before release.
+
+=cut
