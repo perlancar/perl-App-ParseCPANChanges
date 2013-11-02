@@ -32,6 +32,9 @@ sub parse_cpan_changes {
 	    do { $file = $_; last } if -f $_;
 	}
     }
+    return [400, "Please specify file ".
+                "(or run in directory where Changes file exists)"]
+        unless $file;
 
     my $ch = CPAN::Changes->load($file);
     [200, "OK", Data::Structure::Util::unbless($ch)];
