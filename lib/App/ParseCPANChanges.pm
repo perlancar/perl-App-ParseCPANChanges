@@ -1,10 +1,11 @@
 package App::ParseCPANChanges;
 
+# DATE
+# VERSION
+
 use 5.010001;
 use strict;
 use warnings;
-
-# VERSION
 
 our %SPEC;
 
@@ -41,7 +42,7 @@ sub parse_cpan_changes {
 }
 
 1;
-# ABSTRACT: Parse CPAN Changes file
+# ABSTRACT:
 
 =head1 DESCRIPTION
 
