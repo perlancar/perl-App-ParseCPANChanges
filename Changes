@@ -1,5 +1,12 @@
 Revision history for App-ParseCPANChanges
 
+0.06    2016-01-18 (PERLANCAR)
+
+        - No functional changes.
+
+        - [build] Rebuild to fix POD section ordering.
+
+
 0.05    2015-09-03 (PERLANCAR)
 
 	- No functional changes.
