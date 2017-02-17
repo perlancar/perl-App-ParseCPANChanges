@@ -14,7 +14,7 @@ $SPEC{parse_cpan_changes} = {
     summary => 'Parse CPAN Changes file',
     args => {
 	file => {
-	    schema => 'str*',
+	    schema => 'filename*',
 	    summary => 'If not specified, will look for file called '.
 		'Changes/ChangeLog in current directory',
 	    pos => 0,
