@@ -19,13 +19,20 @@ $SPEC{parse_cpan_changes} = {
 		'Changes/ChangeLog in current directory',
 	    pos => 0,
 	},
+        class => {
+            schema => 'perl::modname*',
+            default => 'CPAN::Changes',
+        },
     },
 };
 sub parse_cpan_changes {
-    require CPAN::Changes;
     require Data::Structure::Util;
 
     my %args = @_;
+
+    my $class = $args{class} // 'CPAN::Changes';
+    (my $class_pm = "$class.pm") =~ s!::!/!g;
+    require $class_pm;
 
     my $file = $args{file};
     if (!$file) {
@@ -37,7 +44,7 @@ sub parse_cpan_changes {
                 "(or run in directory where Changes file exists)"]
         unless $file;
 
-    my $ch = CPAN::Changes->load($file);
+    my $ch = $class->load($file);
     [200, "OK", Data::Structure::Util::unbless($ch)];
 }
 
