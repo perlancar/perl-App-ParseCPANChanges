@@ -23,13 +23,24 @@ $SPEC{parse_cpan_changes} = {
             schema => 'perl::modname*',
             default => 'CPAN::Changes',
         },
+        unbless => {
+            summary => 'Whether to return Perl objects as unblessed refs',
+            schema => 'bool*',
+            default => 1,
+            description => <<'_',
+
+If you set this to false, you'll need to use an output format that can handle
+serializing Perl objects, e.g. on the CLI using `--format=perl`.
+
+_
+        },
     },
 };
 sub parse_cpan_changes {
     require Data::Structure::Util;
 
     my %args = @_;
-
+    my $unbless = $args{unbless} // 1;
     my $class = $args{class} // 'CPAN::Changes';
     (my $class_pm = "$class.pm") =~ s!::!/!g;
     require $class_pm;
@@ -45,7 +56,7 @@ sub parse_cpan_changes {
         unless $file;
 
     my $ch = $class->load($file);
-    [200, "OK", Data::Structure::Util::unbless($ch)];
+    [200, "OK", $unbless ? Data::Structure::Util::unbless($ch) : $ch];
 }
 
 1;
