@@ -2,3 +2,4 @@ App-ParseCPANChanges-*
 .build
 *~
 nytprof*
+.DS_Store
